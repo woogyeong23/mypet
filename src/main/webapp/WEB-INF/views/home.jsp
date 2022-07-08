@@ -7,15 +7,10 @@
 <body>
 <h2>Hello world!</h2>
 
-충돌 test
-<h3>  홈 페이지입니다... </h3>
-choi 충돌 test
-	
-	choi->master 충돌해결
 	<h3>  홈 페이지입니다... </h3>
 
 <hr/>
-lee test
+hannn test
 	<c:choose>
 		<c:when test="${member_id != null}"><!-- 로그인이 이루어진 경우 -->
 		
