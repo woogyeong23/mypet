@@ -5,7 +5,7 @@
 <mapper namespace = "com.jeonju.mypet.admin">
 
 	<select id="getMemberList" resultType="memberVo">
-		select * from spring_member
+		select * from member
 	</select>
 	
 	<update id="updateMemberGrade" parameterType="map">
