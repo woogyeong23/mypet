@@ -5,7 +5,7 @@
 <mapper namespace = "com.jeonju.mypet.member">
 
 	<insert id="joinMember" parameterType="memberVo">
-		insert into spring_member(member_id, member_pw, member_name, member_phone) 
+		insert into member(member_id, member_pw, member_name, member_phone) 
 		 values(#{member_id}, #{member_pw}, #{member_name}, #{member_phone})
 	</insert>
 	
@@ -14,15 +14,15 @@
 	</select> -->
 	
 	<select id="loginMember" parameterType="map" resultType="map">
-		select count(*) as member_auth, member_grade from spring_member where member_id=#{member_id} and member_pw=#{member_pw}
+		select count(*) as member_auth, member_grade from member where member_id=#{member_id} and member_pw=#{member_pw}
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">
-		select member_id, member_name, member_pw, member_phone from spring_member where member_id=#{member_id}
+		select member_id, member_name, member_pw, member_phone from member  where member_id=#{member_id}
 	</select>
 
 	<select id="checkId" parameterType="string" resultType="int">
-		select count(*) from spring_member where member_id=#{member_id}
+		select count(*) from member where member_id=#{member_id}
 	</select>
 
 
