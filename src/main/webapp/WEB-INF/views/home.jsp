@@ -80,7 +80,7 @@
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-middle">
                             <ul class="useful-links">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
@@ -92,14 +92,29 @@
                                 <i class="lni lni-user"></i>
                                 Hello
                             </div>
+                            <c:choose>
+                            <c:when test="${member_id != null}"><!-- 로그인이 이루어진 경우 -->
                             <ul class="user-login">
+                            <li>
+                               <a href="${pageContext.request.contextPath}/memberInfo.do">내정보</a> 
+                            </li>
+                            <li>
+                               <a href="${pageContext.request.contextPath}/logout.do">로그아웃</a>
+                            </li>
+                            </ul>
+                            </c:when>
+                            
+                            <c:otherwise>
+                            <ul class="user-login"><!-- 로그인 X 상태 -->
                                 <li>
-                                    <a href="login.html">Sign In</a>
+                                    <a href="${pageContext.request.contextPath}/login.do">Sign In</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Register</a>
+                                    <a href="${pageContext.request.contextPath}/join.do">Register</a>
                                 </li>
                             </ul>
+                            </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
                 </div>
@@ -112,7 +127,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="${pageContext.request.contextPath}/home.do">
                             <img src="resources/assets/images/logo/logo.svg" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
@@ -267,7 +282,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="index.html" class="active" aria-label="Toggle navigation">Home</a>
+                                        <a href="${pageContext.request.contextPath}/home.do" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
@@ -306,7 +321,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">Contact Us</a>
+                                        <a href="contact.html" aria-label="Toggle navigation">커뮤니티</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
