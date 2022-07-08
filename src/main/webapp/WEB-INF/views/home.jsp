@@ -7,7 +7,7 @@
 <body>
 <h2>Hello world!</h2>
 
-충돌 해결
+충돌 test
 <h3>  홈 페이지입니다... </h3>
 
 <hr/>
